@@ -73,7 +73,7 @@
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">5</stringProp>
         <longProp name="ThreadGroup.start_time">1554353293000</longProp>
         <longProp name="ThreadGroup.end_time">1554353293000</longProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
@@ -83,7 +83,7 @@
       <hashTree>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">32</stringProp>
+          <stringProp name="LoopController.loops">2002</stringProp>
         </LoopController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Contact API" enabled="true">
@@ -91,21 +91,21 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="publisher_api_key" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">1125</stringProp>
+                  <stringProp name="Argument.value">1126</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">publisher_api_key</stringProp>
                 </elementProp>
                 <elementProp name="publisher_id" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">1</stringProp>
+                  <stringProp name="Argument.value">2</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">publisher_id</stringProp>
                 </elementProp>
                 <elementProp name="contact_id" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">9</stringProp>
+                  <stringProp name="Argument.value">13</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">contact_id</stringProp>
@@ -213,7 +213,7 @@
           </HTTPSamplerProxy>
           <hashTree>
             <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
-              <stringProp name="filename">/Users/activemac08/Documents/contactapi.csv</stringProp>
+              <stringProp name="filename">/Users/activemac08/Documents/insertapi2k.csv</stringProp>
               <stringProp name="fileEncoding"></stringProp>
               <stringProp name="variableNames">firstname,surname,email,salutation,ipaddress,dob,postcode,gender,country,optinsource,optindate,optintime</stringProp>
               <stringProp name="delimiter">,</stringProp>
@@ -224,7 +224,7 @@
             </CSVDataSet>
             <hashTree/>
             <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
-              <stringProp name="ConstantTimer.delay">3000</stringProp>
+              <stringProp name="ConstantTimer.delay">30</stringProp>
             </ConstantTimer>
             <hashTree/>
             <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
@@ -362,6 +362,56 @@
               </objProp>
               <stringProp name="filename"></stringProp>
             </ResultCollector>
+            <hashTree/>
+            <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="jp@gc - PerfMon Metrics Collector" enabled="true">
+              <boolProp name="ResultCollector.error_logging">false</boolProp>
+              <objProp>
+                <name>saveConfig</name>
+                <value class="SampleSaveConfiguration">
+                  <time>true</time>
+                  <latency>true</latency>
+                  <timestamp>true</timestamp>
+                  <success>true</success>
+                  <label>true</label>
+                  <code>true</code>
+                  <message>true</message>
+                  <threadName>true</threadName>
+                  <dataType>true</dataType>
+                  <encoding>false</encoding>
+                  <assertions>true</assertions>
+                  <subresults>true</subresults>
+                  <responseData>false</responseData>
+                  <samplerData>false</samplerData>
+                  <xml>true</xml>
+                  <fieldNames>true</fieldNames>
+                  <responseHeaders>false</responseHeaders>
+                  <requestHeaders>false</requestHeaders>
+                  <responseDataOnError>false</responseDataOnError>
+                  <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                  <assertionsResultsToSave>0</assertionsResultsToSave>
+                  <bytes>true</bytes>
+                  <threadCounts>true</threadCounts>
+                  <idleTime>true</idleTime>
+                </value>
+              </objProp>
+              <stringProp name="filename"></stringProp>
+              <longProp name="interval_grouping">1000</longProp>
+              <boolProp name="graph_aggregated">false</boolProp>
+              <stringProp name="include_sample_labels"></stringProp>
+              <stringProp name="exclude_sample_labels"></stringProp>
+              <stringProp name="start_offset"></stringProp>
+              <stringProp name="end_offset"></stringProp>
+              <boolProp name="include_checkbox_state">false</boolProp>
+              <boolProp name="exclude_checkbox_state">false</boolProp>
+              <collectionProp name="metricConnections">
+                <collectionProp name="917712290">
+                  <stringProp name="-1204607085">localhost</stringProp>
+                  <stringProp name="1600768">4444</stringProp>
+                  <stringProp name="66952">CPU</stringProp>
+                  <stringProp name="0"></stringProp>
+                </collectionProp>
+              </collectionProp>
+            </kg.apc.jmeter.perfmon.PerfMonCollector>
             <hashTree/>
           </hashTree>
         </hashTree>
